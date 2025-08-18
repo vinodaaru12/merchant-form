@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merchant Form Auto-Fill</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-100 min-h-screen flex flex-col">
+  <!-- Main Content -->
+  <main class="flex-1 p-4 pb-24">
+    <div class="bg-white rounded-2xl shadow-lg p-6 w-full max-w-md mx-auto">
+      <h2 class="text-2xl font-bold mb-6 text-gray-800 text-center"></h2>
+
+      <form id="merchantForm" class="space-y-8">
+
+        <!-- Merchant Details -->
+        <fieldset class="border border-gray-200 rounded-xl p-5">
+          <legend class="text-lg font-semibold text-gray-700 px-2">Transaction Overview</legend>
+          <div class="mt-4 space-y-5">
+            <div>
+              <label for="merchant_name" class="block text-sm font-medium text-gray-700 mb-1">Merchant Name</label>
+              <input type="text" id="merchant_name" name="merchant_name"
+                class="w-full rounded-lg border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-sm p-3">
+            </div>
+            <div>
+              <label for="merchant_address" class="block text-sm font-medium text-gray-700 mb-1">Merchant
+                Address</label>
+              <input type="text" id="merchant_address" name="merchant_address"
+                class="w-full rounded-lg border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-sm p-3">
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Invoice Details -->
+        <fieldset class="border border-gray-200 rounded-xl p-5">
+          <legend class="text-lg font-semibold text-gray-700 px-2">Invoice Details</legend>
+          <div class="mt-4 space-y-5">
+            <div>
+              <label for="invoice_no" class="block text-sm font-medium text-gray-700 mb-1">Invoice Number</label>
+              <input type="text" id="invoice_no" name="invoice_no"
+                class="w-full rounded-lg border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-sm p-3">
+            </div>
+            <div>
+              <label for="transaction_date" class="block text-sm font-medium text-gray-700 mb-1">Transaction
+                Date</label>
+              <input type="text" id="transaction_date" name="transaction_date"
+                class="w-full rounded-lg border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-sm p-3">
+            </div>
+            <div>
+              <label for="amount" class="block text-sm font-medium text-gray-700 mb-1">Transaction Amount</label>
+              <input type="number" id="amount" name="amount" step="0.01"
+                class="w-full rounded-lg border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-sm p-3">
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Transaction Details -->
+        <fieldset class="border border-gray-200 rounded-xl p-5">
+          <legend class="text-lg font-semibold text-gray-700 px-2">Transaction Details</legend>
+          <div class="mt-4 space-y-5">
+            <div>
+              <label for="transaction_id" class="block text-sm font-medium text-gray-700 mb-1">Transaction ID</label>
+              <input type="text" id="transaction_id" name="transaction_id"
+                class="w-full rounded-lg border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-sm p-3">
+            </div>
+            <div>
+              <label for="transaction_type" class="block text-sm font-medium text-gray-700 mb-1">Transaction
+                Type</label>
+              <input type="text" id="transaction_type" name="transaction_type"
+                class="w-full rounded-lg border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-sm p-3">
+            </div>
+            <div>
+              <label for="product" class="block text-sm font-medium text-gray-700 mb-1">Product</label>
+              <input type="text" id="product" name="product"
+                class="w-full rounded-lg border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-sm p-3">
+            </div>
+            <div>
+              <label for="rsp" class="block text-sm font-medium text-gray-700 mb-1">RSP</label>
+              <input type="number" id="rsp" name="rsp" step="0.01"
+                class="w-full rounded-lg border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-sm p-3">
+            </div>
+            <div>
+              <label for="volume" class="block text-sm font-medium text-gray-700 mb-1">Volume</label>
+              <input type="number" id="volume" name="volume" step="0.001"
+                class="w-full rounded-lg border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-sm p-3">
+            </div>
+            <div>
+              <label for="happy_coins" class="block text-sm font-medium text-gray-700 mb-1">Happy Coins</label>
+              <input type="number" id="happy_coins" name="happy_coins"
+                class="w-full rounded-lg border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-sm p-3">
+            </div>
+            <div>
+              <label for="transaction_status" class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+              <input type="text" id="transaction_status" name="transaction_status"
+                class="w-full rounded-lg border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-sm p-3">
+            </div>
+            <div>
+              <label for="payment_mode" class="block text-sm font-medium text-gray-700 mb-1">Payment Mode</label>
+              <input type="text" id="payment_mode" name="payment_mode"
+                class="w-full rounded-lg border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-sm p-3">
+            </div>
+            <div>
+              <label for="wallet_balance" class="block text-sm font-medium text-gray-700 mb-1">Wallet Balance</label>
+              <input type="number" id="wallet_balance" name="wallet_balance" step="0.01"
+                class="w-full rounded-lg border border-gray-300 shadow-sm focus:border-blue-500 focus:ring-2 focus:ring-blue-400 text-sm p-3">
+            </div>
+          </div>
+        </fieldset>
+
+        <!-- Submit Button -->
+        <button type="submit"
+          class="w-full bg-green-600 text-white font-semibold py-3 px-4 rounded-xl hover:bg-green-700 active:bg-green-800 transition-colors duration-200 shadow-md">
+          Submit
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Sticky Footer -->
+  <footer class="fixed bottom-0 left-0 w-full bg-gray-100 text-center text-gray-600 text-sm py-3 shadow-inner">
+    © 2025 Jio Platforms Ltd. All rights reserved.
+  </footer>
+</body>
+
+</html>
